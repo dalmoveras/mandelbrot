@@ -1,5 +1,7 @@
 use num::Complex;
 use std::str::FromStr;
+use std::fs::File;
+use image::png::PNGEncoder
 
 fn complex_square_add_loop(c: Complex<f64>) {
 	let mut z = Complex { re: 0.0, im: 0.0 };
@@ -68,6 +70,13 @@ fn render(
 			};
 		}
 	}
+}
+
+fn write_image(filename: &str, pixels: &[u8], bounds: (usize, usize)) -> Result<(), std::io::Error> {
+	let output = File::create(filename)?;
+	let encoder = PNGEncoder::new(output);
+	encoder.encode(&pixels, boudns.0 as u32, bounds.1 as u32, ColorType::Gray(8))?;
+	Ok(())
 }
 
 fn main() {}
