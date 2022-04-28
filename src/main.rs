@@ -64,7 +64,7 @@ fn render(
 	lower_right: Complex<f64>,
 ) {
 	assert!(pixels.len() == bounds.0 * bounds.1);
-	for row in 0..bounds.0 {
+	for row in 0..bounds.1 {
 		for column in 0..bounds.0 {
 			let point = pixel_to_point(bounds, (column, row), upper_left, lower_right);
 			pixels[row * bounds.0 + column] = match escape_time(point, 255) {
