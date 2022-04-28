@@ -12,3 +12,10 @@ The Mandelbrot set is defined as the set of complex numbers `c` for which `z` do
 ##### Result example
 ![mandelbrot](https://user-images.githubusercontent.com/6532445/165857764-50854e45-b943-4dac-a50b-176922e965e2.png)
 
+
+##### Usage:
+`cargo run mandelbrot.png 1000x750 -1.20,0.35 -1,0.20`
+
+
+##### ToDos
+- [ ] Make it concurrent
