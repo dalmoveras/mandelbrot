@@ -1,5 +1,5 @@
 pub fn gcd(a: i32, b: i32) -> i32 {
-   return  euclidean_algorithm(a, b);
+    return euclidean_algorithm(a, b);
 }
 
 pub fn euclidean_algorithm(mut a: i32, mut b: i32) -> i32 {
@@ -10,18 +10,15 @@ pub fn euclidean_algorithm(mut a: i32, mut b: i32) -> i32 {
         b = temp;
     }
     loop {
-
         r = a % b;
         println!("Euclidean algorithm: r={}, a={}, b={}", &r, &a, &b);
         if r == 0 {
             return b;
-        }
-        else {
+        } else {
             a = b;
             b = r;
         }
     }
- 
 }
 
 #[cfg(test)]
@@ -35,12 +32,11 @@ mod tests {
         println!(" -----------------");
 
         let result2 = gcd(710, 310);
-        assert_eq!(result2, 10); 
+        assert_eq!(result2, 10);
         println!(" -----------------");
 
         let result3 = gcd(1160718174, 316258250);
-        assert_eq!(result3, 1078); 
+        assert_eq!(result3, 1078);
         println!(" -----------------");
     }
 }
-
